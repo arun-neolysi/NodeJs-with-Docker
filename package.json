@@ -3,16 +3,23 @@
   "version": "1.0.0",
   "main": "src/app.js",
   "scripts": {
-    "start": "node --env-file=.env.production src/app.js",
-    "dev": "node --watch --env-file=.env.development src/app.js",
-    "test": "node --test"
+    "start": "node --env-file=.env.production dist/app.js",
+    "dev": "node --watch --env-file=.env.development --experimental-strip-types src/app.ts",
+    "test": "node --test",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "description": "",
   "dependencies": {
-    "express": "^4.21.2"
+    "express": "^4.21.2",
+    "mysql2": "^3.13.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.10",
+    "typescript": "^5.8.2"
   }
 }
